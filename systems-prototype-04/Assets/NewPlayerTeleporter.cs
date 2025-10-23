@@ -5,6 +5,7 @@ public class NewPlayerTeleporter : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform teleportZoneObj;
+    public AudioSource dingSound;
 
 
     private void OnTriggerEnter(Collider col)
@@ -15,6 +16,7 @@ public class NewPlayerTeleporter : MonoBehaviour
 
         if (col.CompareTag("Player"))
         {
+            dingSound.Play();
             Rigidbody rb = col.GetComponent<Rigidbody>();
 
             if (rb != null)

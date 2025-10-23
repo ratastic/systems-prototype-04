@@ -3,6 +3,7 @@ using UnityEngine;
 public class Teleport2 : MonoBehaviour
 {
     public Transform teleport;
+    public AudioSource ding;
     private void OnTriggerEnter(Collider col)
     {
 
@@ -11,6 +12,7 @@ public class Teleport2 : MonoBehaviour
 
         if (col.CompareTag("Player"))
         {
+            ding.Play();
             Rigidbody rb = col.GetComponent<Rigidbody>();
 
             if (rb != null)
